@@ -1,0 +1,101 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local UIS = game:GetService("UserInputService")
+_G.Bind = false
+
+UIS.InputBegan:Connect(function(inp, gpe)
+    if not gpe and inp.KeyCode == Enum.KeyCode.G and _G.Bind == true then
+    local things = {
+    "MPcuffs";
+    "StunGun";
+    "MPsmoke";
+    "PepperSpray";
+    "MPbaton";
+    "MPflash";
+    }
+for _,v in pairs(things) do
+    game:GetService("Players").LocalPlayer.PlayerGui.HelpInfo.Armory.MpGear.ChooseWeapon:FireServer(v)
+    wait(0.2)
+end
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+    end
+end)
+
+local win = DiscordLib:Window("discord library")
+
+local serv = win:Server("SIR YES SIR", "")
+
+local btns = serv:Channel("Stuff")
+
+btns:Button("Become Priest", function()
+DiscordLib:Notification("Notification", "You are now a Priest", "God Bless America")
+local ohString1 = "PRIEST"
+local ohString2 = "http://www.roblox.com/asset/?id=3081265387"
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(ohString1, ohString2)
+end)
+
+btns:Button("Become Private", function()
+DiscordLib:Notification("Notification", "You are now a Private", "Sign your life away")
+local ohString1 = "PRIVATE"
+local ohString2 = "http://www.roblox.com/asset/?id=10661149392"
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(ohString1, ohString2)
+end)
+
+btns:Button("Become Commanding Officer", function()
+DiscordLib:Notification("Notification", "You are now the CO (Fake)", "Win at Life")
+local ohString1 = "COMMANDING OFFICER"
+local ohString2 = "rbxassetid://20513702"
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(ohString1, ohString2)
+end)
+
+btns:Button("Become Army Recruit", function()
+DiscordLib:Notification("Notification", "You are now the highest rank", "lets go")
+local ohString1 = "ARMY RECRUIT"
+local ohString2 = "rbxassetid://455837640"
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(ohString1, ohString2)
+end)
+
+btns:Button("Become General", function()
+DiscordLib:Notification("Notification", "Great low rates", "HOORAH")
+local ohString1 = "GENERAL"
+local ohString2 = "http://www.roblox.com/asset/?id=2853472165"
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(ohString1, ohString2)
+end)
+
+btns:Seperator()
+
+btns:Button("Give me my tools", function()
+DiscordLib:Notification("Notification", "You got it boss man", "ez")
+local things = {
+    "MPcuffs";
+    "StunGun";
+    "MPsmoke";
+    "PepperSpray";
+    "MPbaton";
+    "MPflash";
+    }
+for _,v in pairs(things) do
+    game:GetService("Players").LocalPlayer.PlayerGui.HelpInfo.Armory.MpGear.ChooseWeapon:FireServer(v)
+    wait(0.2)
+end
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end)
+
+btns:Button("Toolbind", function()
+    if _G.Bind == false then
+        _G.Bind = true
+        DiscordLib:Notification("Notification", "Bind is on", "nice")
+        else
+    _G.Bind = false
+     DiscordLib:Notification("Notification", "Bind is off", "oh")
+    end
+end)
+
+btns:Textbox("Set Your Rank", "Type here!", true, function(t)
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(t, workspace.helperbot35.HumanoidRootPart.HeadGUI.RankIcon.Image)
+end)
+
+btns:Textbox("Set Your Image", "Type here!", true, function(t)
+workspace.helperbot35.HumanoidRootPart.HeadGUI.UpdateHeadGUI:FireServer(workspace.helperbot35.HumanoidRootPart.HeadGUI.Rank.Text, t)
+end)
+
+
